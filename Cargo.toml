@@ -1,0 +1,10 @@
+[package]
+name = "auprops"
+version = "0.1.0"
+authors = ["Automatl <au@tomatl.org>"]
+
+[dependencies.audsp]
+git = "https://github.com/kykc/audsp-rs"
+
+[dependencies.aunorm]
+git = "https://github.com/kykc/aunorm-rs"
