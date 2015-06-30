@@ -87,7 +87,7 @@ impl<'a, TSample: audsp::Numeric, TProcessor> PropStorage<'a, TSample, TProcesso
         return self.properties.get(&i).map(|x| x.value).unwrap_or(TSample::zero())
     }
 
-    pub fn get_propinfo(&self, index: i32) -> Option<&PropInfo<TSample, TProcessor>> {
+    pub fn get_propinfo(&self, index: i32) -> Option<&PropInfo<'a, TSample, TProcessor>> {
         let i:u32 = index as u32;
         self.properties.get(&i)
     }
