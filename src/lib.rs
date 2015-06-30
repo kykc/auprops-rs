@@ -4,8 +4,8 @@ use aunorm::{Normalizer, NormalizerProvider};
 use std::collections::HashMap;
 
 pub trait DspProcessor<'a, TSample: audsp::Numeric> {
-    fn get_properties(& self) -> & PropStorage<'a, TSample, Self>;
-    fn get_mut_properties(&mut self) -> &mut PropStorage<'a, TSample, Self>;
+    fn get_properties(&'a self) -> & PropStorage<'a, TSample, Self>;
+    fn get_mut_properties(&'a mut self) -> &mut PropStorage<'a, TSample, Self>;
     fn param_changed(&mut self, i32);
     fn sample_rate_changed(&mut self, f32);
     fn get_plugin_name(&self) -> String;
